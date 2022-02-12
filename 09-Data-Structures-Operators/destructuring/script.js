@@ -813,13 +813,147 @@ document.body.append(document.createElement("button"));
 document.querySelector("button").addEventListener("click", () => {
   const text = document.querySelector("textarea").value;
 
-  const row = text.split("_");
+  const row = text.split("\n");
   for (const [i, rows] of row.entries()) {
     const [first, second] = rows.toLowerCase().trim().split("_");
     console.log(rows, first, second);
     const output = `${first} ${second.replace(
-      second[0],second[0].toUpperCase()
+      second[0],
+      second[0].toUpperCase()
     )}`;
     console.log(`${output.padEnd(20)}${"✅".repeat(i + 1)}`);
   }
 });
+
+// const gameEvents = new Map([
+//   [17, "⚽ GOAL"],
+//   [36, "� Substitution"],
+//   [47, "⚽ GOAL"],
+//   [61, "� Substitution"],
+//   [64, "� Yellow card"],
+//   [69, "� Red card"],
+//   [70, "� Substitution"],
+//   [72, "� Substitution"],
+//   [76, "⚽ GOAL"],
+//   [80, "⚽ GOAL"],
+//   [92, "� Yellow card"],
+// ]);
+
+// const events = new Set([...gameEvents.values()]);
+// console.log(events);
+
+// gameEvents.delete(64);
+// // "An event happened, onaverage, every 9 minutes"
+// const time = [...gameEvents.keys()].pop();
+// console.log(time);
+// console.log(
+//   `An event happened, on average, every ${90 / gameEvents.size} minutes `
+// );
+
+// for ([min, Event] of gameEvents) {
+//   const half = min <= 45 ? "firstHalf" : "secoundHalf";
+//   console.log(`${half}),${min} : ${Event}`);
+// }
+
+// const gameEvents = new Map([
+//   [17, "⚽ GOAL"],
+//   [36, "� Substitution"],
+//   [47, "⚽ GOAL"],
+//   [61, "� Substitution"],
+//   [64, "� Yellow card"],
+//   [69, "� Red card"],
+//   [70, "� Substitution"],
+//   [72, "� Substitution"],
+//   [76, "⚽ GOAL"],
+//   [80, "⚽ GOAL"],
+//   [92, "� Yellow card"],
+// ]);
+
+// const events = new Set([...gameEvents.values()]);
+// console.log(events);
+
+// gameEvents.delete(64);
+
+// const time = [...gameEvents.keys()].pop();
+// console.log(time);
+// console.log(
+//   `An event happened, on average, every ${90 / gameEvents.size}  minutes`
+// );
+// for ([Min, Event] of gameEvents) {
+//   const half = Min <= 45 ? "first" : "second";
+//   console.log(`${half},${Min} : ${Event}`);
+// }
+
+const game = {
+  team1: "Bayern Munich",
+  team2: "Borrussia Dortmund",
+  players: [
+    [
+      "Neuer",
+      "Pavard",
+      "Martinez",
+      "Alaba",
+      "Davies",
+      "Kimmich",
+      "Goretzka",
+      "Coman",
+      "Muller",
+      "Gnarby",
+      "Lewandowski",
+    ],
+    [
+      "Burki",
+      "Schulz",
+      "Hummels",
+      "Akanji",
+      "Hakimi",
+      "Weigl",
+      "Witsel",
+      "Hazard",
+      "Brandt",
+      "Sancho",
+      "Gotze",
+    ],
+  ],
+  score: "4:0",
+  scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+  date: "Nov 9th, 2037",
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+const [players1, players2] = game.players;
+console.log(players1, players2);
+
+const [gk, ...fieldPlayers] = players1;
+console.log(gk, fieldPlayers);
+const [gk2, ...fieldPlayers2] = players2;
+console.log(gk2, players2);
+
+const allPlayers = [...players1, ...players2];
+console.log(allPlayers);
+
+const newteam = [...players1, "Thiago", "Coutinho", "Perisic"];
+console.log(newteam);
+
+// const odd = `${team1.odds}, ${x.odds}, ${team2.odds}`;
+// console.log(odd);
+
+const { team1 } = game.odds;
+const { x: draw } = game.odds;
+const { team2 } = game.odds;
+console.log(team1, draw, team2);
+
+let printGoal = function (...players) {
+  console.log(`${players.length}Goal Were Scored`);
+};
+
+printGoal("Davies", "Muller", "Lewandowski", "Kimmich");
+printGoal("Davies", "Muller");
+printGoal(...game.scored);
+
+team1 < team2 && console.log("Team1 win the match");
+team2 < team1 && console.log("Team2 win the match");
