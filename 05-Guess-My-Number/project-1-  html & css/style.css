@@ -23,8 +23,8 @@ body {
   position: absolute;
   margin-left: 4%;
   margin-top: 3%;
-  width: 10%;
   height: 5%;
+  width: 10%;
 }
 
 .number {
@@ -48,4 +48,8 @@ body {
 .btn {
   position: absolute;
   margin-top: 35%;
+}
+
+.message{
+  
 }

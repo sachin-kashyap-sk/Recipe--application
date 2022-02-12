@@ -12,6 +12,7 @@ console.log(document.querySelector('.guess').value);
 */
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
+console.log('Secret', secretNumber);
 let score = 20;
 let highscore = 0;
 
@@ -20,6 +21,8 @@ const displayMessage = function (message) {
 };
 
 document.querySelector('.check').addEventListener('click', function () {
+  console.log('Secret Num', secretNumber);
+
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
 

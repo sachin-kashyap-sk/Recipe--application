@@ -308,7 +308,8 @@ const sachin  = {
         console.log(sachin.getsummary()); 
 */
 /*
-
+*/
+/*
 const Mark = {
     FullName :"MarkMiller" ,
     Mass   :  78 ,
@@ -326,7 +327,8 @@ const John = {
 
     calcBMI : function( ){
     this.bmi = this.Mass / (this.Height * this.Height)  }
-};
+    }
+
     Mark.calcBMI();
     console.log(Mark.bmi);
 
@@ -334,8 +336,8 @@ const John = {
     console.log(John.bmi);
 
     console.log(`${Mark.FullName} Has The Higher BMI Than ${John.FullName} BMI`);
+    
 */
-
 
 /*////////////////////////////////////////////////object practice ///////////////////////////////////////////////////////////////*/
 /*
@@ -358,8 +360,8 @@ const ram = {
         calcage : function( ){
             this.age = 2022 - this.birthyear ;
         return this.age ;
-        },
         getsummary :function( ){
+        },
             return (`i am ${this.firstname} ${this.lastname} and my age is ${this.age} and i have ${rohan.friends.length} friends`);
 
         
@@ -389,7 +391,7 @@ const year = [1998,2000,2002,2004] ;
 const ages = [];
 
 for(let i = 0 ; i < year.length ; i++ ){
-    ages.push(2022 - year[i]);
+      ages.push(2022 - year[i]);
 }
 console.log(ages);
 */
@@ -406,14 +408,14 @@ const ram = [
 
 console.log('----only string----');
 
-for(let i = 0 ; i < ram ; i++){
+for(let i = 0 ; i < ram.length ; i++){
     if(typeof ram[i] !=='string' ) continue ;
 }
 
 
-console.log(ram[i], typeof ram[i]);
+console.log([i], typeof ram[i]);
 
-*
+
 
 const rohan = [
     'rohan', 
@@ -430,7 +432,7 @@ console.log(rohan[i],typeof rohan[i]);
 */
 
 /*/////////////////////////////////////////Looping backward ////////////////////////////////////////////////////////////////////*/
-
+/*
 
 const ram = [
              'ram', 
@@ -455,7 +457,7 @@ for(let i = sham.length-1 ; i >= 0 ; i--){
 }
 
 /*//////////////////////////////////////////    Loop in Loop     /////////////////////////////////////////////////////////////////*/
-
+/*
 for(let exercise = 1; exercise <4 ; exercise++){
     console.log(`-----starting exercise-----${exercise}`);
 
@@ -463,10 +465,10 @@ for (let rep= 1; rep< 6 ; rep++){
     console.log(`-----lifting weight-----${rep}`);
 }
 };
-
+*/
 
 /*///////////////////////////////////////////  while loop   ////////////////////////////////////////////////////////////////////*/
-
+/*
 let rep = 1
 while (rep<=6){
     console.log(`lifting the weight repitition ${rep}`);
@@ -487,37 +489,4 @@ for (let i= 0; i < bill.length ; i++ ){
     totals.push(tip + bill[i]);
 };
 console.log(bill, tips, totals);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
